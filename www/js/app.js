@@ -87,10 +87,8 @@ function done(){
         }
     }
     if (correct == (reV.length+reH.length)){
-        document.getElementById("a").innerHTML = "length = " + (reV.length+reH.length) + "correct = " + correct;
         document.getElementById("doneBtn").style.backgroundColor = "green";
     }else{
-        document.getElementById("a").innerHTML = "length = " + (reV.length+reH.length) + "correct = " + correct;
         document.getElementById("doneBtn").style.backgroundColor = "red";
     }
 }
