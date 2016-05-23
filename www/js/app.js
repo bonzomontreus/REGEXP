@@ -21,18 +21,70 @@
 // var el ;
 // el = document.getElementById("id_myButton") ;
 // el.addEventListener("click", myEventHandler, false) ;
-function empezar(){
+function start(){
     document.getElementById("viewMenu").style.display = "none";
-    document.getElementById("viewGame").style.display = ""
+    document.getElementById("viewGame").style.display = "";
 }
 
 function menu(){
     document.getElementById("viewGame").style.display = "none";
-    document.getElementById("viewMenu").style.display = ""
+    document.getElementById("viewMenu").style.display = "";
 }
 
 function done(){
-    $("#").value
+    var reV = [];
+    var reH = [];
+    var inH = [];
+    var inV = [];
+    var reVcount = document.getElementsByName("reV").length;
+    for (var i=0;i<reVcount;i++){
+        var id = document.getElementsByName("reV")[i].getAttribute("id");
+        reV[i] = document.getElementById(id).innerHTML;
+    }
+    var reHcount = document.getElementsByName("reH").length;
+    for (i=0;i<reHcount;i++){
+        id = document.getElementsByName("reH")[i].getAttribute("id");
+        reH[i] = document.getElementById(id).innerHTML;
+    }
+    var idMkrH = 0;
+    for (i=0;i<reH.length;i++){
+        for (var j=0;j<reV.length;j++){
+            if(j==0){
+                inH[i] = document.getElementById("input"+idMkrH).value.toUpperCase();
+            }else{
+                inH[i] = inH[i] + document.getElementById("input"+idMkrH).value.toUpperCase();
+            }
+            idMkrH=idMkrH+1;
+        }
+    }
+    var idMkrV = 0;
+    for (i=0;i<reV.length;i++){
+        for (var x=0;x<reH.length;x++){
+            if(x==0){
+                inV[i] = document.getElementById("input"+idMkrV).value.toUpperCase();
+                document.getElementById("a").innerHTML = idMkrV;
+            }else{
+                idMkrV = idMkrV + reH.length;
+                inV[i] = inV[i] + document.getElementById("input"+idMkrV).value.toUpperCase();
+                document.getElementById("a").innerHTML = idMkrV;
+            }
+        } 
+    }
+    
+    
+    
+//    var reOne = document.getElementById("re1").innerHTML;
+//    reOne = new RegExp(reOne,"g");
+//    var reTwo = document.getElementById("re2").innerHTML;
+//    reTwo = /reTwo/g;
+//    var reThree = document.getElementById("re3").innerHTML;
+//    reThree = new RegExp(reThree, "g");
+//    var reFour = document.getElementById("re4").innerHTML;
+//    reFour = /reFour/g
+//    var hOne = document.getElementById("input1").value + document.getElementById("input2").value + "";
+//    if (reThree.test(hOne.toUpperCase())){
+//        document.getElementById("a").innerHTML = "woooooo";
+//    }
 }
 
 // The function below is an example of the best way to "start" your app.
@@ -44,7 +96,7 @@ function onAppReady() {
     if( navigator.splashscreen && navigator.splashscreen.hide ) {   // Cordova API detected
         navigator.splashscreen.hide() ;
     }
-    document.getElementById("viewGame").style.display = "none"
+    document.getElementById("viewGame").style.display = "none";
 }
 document.addEventListener("app.Ready", onAppReady, false) ;
 // document.addEventListener("deviceready", onAppReady, false) ;

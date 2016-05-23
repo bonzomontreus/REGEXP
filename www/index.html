@@ -30,7 +30,7 @@
                 <div class="col s12">
                     <h1>[REGEXP]+</h1>
                 </div>
-                <a  onclick="empezar()" id="empezarBtn" class="btn orange darken-1">Empezar</a>
+                <a  onclick="start()" id="empezarBtn" class="btn orange darken-1">Empezar</a>
             </div>
         </div>
 
@@ -47,10 +47,10 @@
 <!--                            -->
                         </div>
                         <div class="col s3 valign">
-                            <p style="transform: rotate(90deg); text-align:center; margin-bottom: 20px;" >[^SPEAK]+</p>
+                            <p id="re1" name="reV" style="transform: rotate(90deg); text-align:center; margin-bottom: 20px;" >[^SPEAK]+</p>
                         </div>
                         <div class="col s3 valign">
-                            <p style="transform: rotate(90deg); text-align:center; margin-bottom: 20px;" >EP|IP|EF</p>
+                            <p id="re2" name="reV" style="transform: rotate(90deg); text-align:center; margin-bottom: 20px;" >EP|IP|EF</p>
                         </div>
                         <div class="col s3 valign">
 <!--                            -->
@@ -58,13 +58,13 @@
                     </div>
                     <div class="row valign-wrapper" style="margin-bottom:0px;">
                         <div class="col s3 valign">
-                            <p>HE|LL|O+</p>
+                            <p id="re3" name="reH" >HE|LL|O+</p>
                         </div>
                         <div class="col s3 valign">
-                            <input class="input" oninput="capitalize()" style="text-align:center; text-transform: uppercase;" maxlength="1"/>
+                            <input id="input0" class="input bold" oninput="capitalize()" style="text-align:center; text-transform: uppercase;" maxlength="1"/>
                         </div>
                         <div class="col s3 valign">
-                            <input class="input" oninput="capitalize()" style="text-align:center;text-transform: uppercase;"  maxlength="1"/>
+                            <input id="input1" class="input bold" oninput="capitalize()" style="text-align:center;text-transform: uppercase;"  maxlength="1"/>
                         </div>
                         <div class="col s3 valign">
 <!--                            7-->
@@ -73,13 +73,13 @@
 
                     <div class="row valign-wrapper" style="margin-bottom:0px;">
                         <div class="col s3 valign">
-                            <p>[PLEASE]+</p>
+                            <p id="re4" name="reH">[PLEASE]+</p>
                         </div>
                         <div class="col s3">
-                            <input class="input valign" oninput="capitalize()" style="text-align:center;text-transform: uppercase;"  maxlength="1"/>
+                            <input id="input2" class="input valign bold" oninput="capitalize()" style="text-align:center;text-transform: uppercase;"  maxlength="1"/>
                         </div>
                         <div class="col s3">
-                            <input class="input valign" oninput="capitalize()" style="text-align:center;text-transform: uppercase;"  maxlength="1"/>
+                            <input id="input3" class="input valign bold" oninput="capitalize()" style="text-align:center;text-transform: uppercase;"  maxlength="1"/>
                         </div>
                         <div class="col s3 valign">
 <!--                            11-->
@@ -87,12 +87,13 @@
                     </div>
                     <div class="row center">
                         <div class="col s12">
-                            <a  onclick="done()" id="doneBtn" class="btn center green darken-1">Comprobar</a>
+                            <a  onclick="done()" id="doneBtn" class="btn center green darken-1" style="margin-top:10px;">Comprobar</a>
                         </div>
                     </div>
 
                     <div class="fixed-action-btn horizontal" style="bottom: 45px; left:20px;">
                         <a  onclick="menu()" id="menuBtn" class="btn orange darken-1">Menu</a>
+                        <a id="a">aaaaaaaaaaaaaaaa</a>
                     </div>
                 </div>
                 <div class="col s1">
