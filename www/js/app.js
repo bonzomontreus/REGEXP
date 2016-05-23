@@ -36,6 +36,7 @@ function done(){
     var reH = [];
     var inH = [];
     var inV = [];
+    var correct = 0;
     var reVcount = document.getElementsByName("reV").length;
     for (var i=0;i<reVcount;i++){
         var id = document.getElementsByName("reV")[i].getAttribute("id");
@@ -58,33 +59,40 @@ function done(){
         }
     }
     var idMkrV = 0;
-    for (i=0;i<reV.length;i++){
-        for (var x=0;x<reH.length;x++){
-            if(x==0){
-                inV[i] = document.getElementById("input"+idMkrV).value.toUpperCase();
-                document.getElementById("a").innerHTML = idMkrV;
+    for (var o=0;o<reV.length;o++){
+        idMkrV = o;
+        for (var p=0;p<reH.length;p++){
+            if(p==0){
+                inV[o] = document.getElementById("input"+idMkrV).value.toUpperCase();
             }else{
-                idMkrV = idMkrV + reH.length;
-                inV[i] = inV[i] + document.getElementById("input"+idMkrV).value.toUpperCase();
-                document.getElementById("a").innerHTML = idMkrV;
+                idMkrV += reH.length;
+                inV[o] = inV[o] + document.getElementById("input"+idMkrV).value.toUpperCase();
             }
         } 
     }
-    
-    
-    
-//    var reOne = document.getElementById("re1").innerHTML;
-//    reOne = new RegExp(reOne,"g");
-//    var reTwo = document.getElementById("re2").innerHTML;
-//    reTwo = /reTwo/g;
-//    var reThree = document.getElementById("re3").innerHTML;
-//    reThree = new RegExp(reThree, "g");
-//    var reFour = document.getElementById("re4").innerHTML;
-//    reFour = /reFour/g
-//    var hOne = document.getElementById("input1").value + document.getElementById("input2").value + "";
-//    if (reThree.test(hOne.toUpperCase())){
-//        document.getElementById("a").innerHTML = "woooooo";
-//    }
+    for (i=0;i<reH.length;i++){
+        var regexp = new RegExp(reH[i],"m");
+        if (inH[i].match(regexp) == inH[i]){
+            correct++;
+        }else{
+            break;
+        }
+    }
+    for (i=0;i<reV.length;i++){
+        regexp = new RegExp(reV[i],"m");
+        if(inV[i].match(regexp) == inV[i]){
+            correct++;
+        }else{
+            break;
+        }
+    }
+    if (correct == (reV.length+reH.length)){
+        document.getElementById("a").innerHTML = "length = " + (reV.length+reH.length) + "correct = " + correct;
+        document.getElementById("doneBtn").style.backgroundColor = "green";
+    }else{
+        document.getElementById("a").innerHTML = "length = " + (reV.length+reH.length) + "correct = " + correct;
+        document.getElementById("doneBtn").style.backgroundColor = "red";
+    }
 }
 
 // The function below is an example of the best way to "start" your app.
