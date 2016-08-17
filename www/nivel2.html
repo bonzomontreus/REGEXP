@@ -1,8 +1,3 @@
-<!DOCTYPE html>
-<html>
-    <!--
-* Please see the included README.md file for license terms and conditions.
--->
     <head>
         <title>Blank Cordova Mobile App Project Template (Lite)</title>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -24,21 +19,8 @@
         <script src="js/materialize.min.js"></script>
         <script src="js/jquery-1.12.4.min.js"></script>
     </head>
-
-    <body>
-        <div class="container" id="viewMenu">
-            <div class="row center">
-                <div class="col s12">
-                    <h1>[REGEXP]+</h1>
-                </div>
-                <a  onclick="start()" id="empezarBtn" class="btn orange darken-1">Empezar</a>
-                <div class="col s12">
-                    <a  href="tuto.html"  style="margin-top:25px" id="tutoBtn" class="btn orange darken-1">Tutorial</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="container" style="height:100%;" id="viewGame">
+<body>
+    <div class="container" style="height:100%;" id="viewGame2">
             <div class="row">
                 <div class="col s1">
                     <p style="color:white;">1</p>
@@ -50,25 +32,31 @@
                         <div class="col s3 valign">
 <!--                            -->
                         </div>
-                        <div class="col s3 valign">
-                            <p id="re1" name="reV" style="transform: rotate(90deg); text-align:center; margin-bottom: 30px;" >[^SPEAK]+</p>
+                        <div class="col s3 valign" style="margin-left:20px;">
+                            <p id="re1" name="reV" style="transform: rotate(90deg); text-align:center; margin-bottom: 30px;" >SC.*T</p>
                         </div>
                         <div class="col s3 valign">
-                            <p id="re2" name="reV" style="transform: rotate(90deg); text-align:center; margin-bottom: 20px;" >EP|IP|EF</p>
+                            <p id="re2" name="reV" style="transform: rotate(90deg); text-align:center; margin-bottom: 20px;" >O[TAN]+0</p>
+                        </div>
+                        <div class="col s3 valign">
+                            <p id="re3" name="reV" style="transform: rotate(90deg); text-align:center; margin-bottom: 20px;" >T*[RA]+</p>
                         </div>
                         <div class="col s3 valign">
 <!--                            -->
                         </div>
                     </div>
                     <div class="row valign-wrapper" style="margin-bottom:0px;">
-                        <div class="col s3 valign">
-                            <p id="re3" name="reH" >HE|LL|O+</p>
+                        <div class="col s3 valign" style="margin-right:20px; padding:10px;">
+                            <p id="re4" name="reH" >[SORT]+</p>
                         </div>
-                        <div class="col s3 valign">
+                        <div class="col s3 valign" >
                             <input id="input0" class="input bold" style="text-align:center; text-transform: uppercase;" maxlength="1"/>
                         </div>
-                        <div class="col s3 valign">
+                        <div class="col s3 valign" >
                             <input id="input1" class="input bold" style="text-align:center;text-transform: uppercase;"  maxlength="1"/>
+                        </div>
+                        <div class="col s3 valign" >
+                            <input id="input2" class="input bold" style="text-align:center;text-transform: uppercase;"  maxlength="1"/>
                         </div>
                         <div class="col s3 valign">
 <!--                            7-->
@@ -76,14 +64,34 @@
                     </div>
 
                     <div class="row valign-wrapper" style="margin-bottom:0px;">
-                        <div class="col s3 valign">
-                            <p id="re4" name="reH">[PLEASE]+</p>
+                        <div class="col s3 valign" style="margin-right:20px; padding:10px;">
+                            <p id="re5" name="reH">[CALR]+</p>
                         </div>
-                        <div class="col s3">
-                            <input id="input2" class="input valign bold" style="text-align:center;text-transform: uppercase;"  maxlength="1"/>
-                        </div>
-                        <div class="col s3">
+                        <div class="col s3" >
                             <input id="input3" class="input valign bold" style="text-align:center;text-transform: uppercase;"  maxlength="1"/>
+                        </div>
+                        <div class="col s3" >
+                            <input id="input4" class="input valign bold" style="text-align:center;text-transform: uppercase;"  maxlength="1"/>
+                        </div>
+                        <div class="col s3" >
+                            <input id="input5" class="input valign bold" style="text-align:center;text-transform: uppercase;"  maxlength="1"/>
+                        </div>
+                        <div class="col s3 valign">
+<!--                            11-->
+                        </div>
+                    </div>
+                    <div class="row valign-wrapper" style="margin-bottom:0px;">
+                        <div class="col s3 valign" style="margin-right:20px; padding:10px;">
+                            <p id="re6" name="reH">[TAN0]*</p>
+                        </div>
+                        <div class="col s3" >
+                            <input id="input6" class="input valign bold" style="text-align:center;text-transform: uppercase;"  maxlength="1"/>
+                        </div>
+                        <div class="col s3" >
+                            <input id="input7" class="input valign bold" style="text-align:center;text-transform: uppercase;"  maxlength="1"/>
+                        </div>
+                        <div class="col s3" >
+                            <input id="input8" class="input valign bold" style="text-align:center;text-transform: uppercase;"  maxlength="1"/>
                         </div>
                         <div class="col s3 valign">
 <!--                            11-->
@@ -91,14 +99,13 @@
                     </div>
                     <div class="row center">
                         <div class="col s12">
-                            <a  onclick="done(1)" id="doneBtn" class="btn center" style="margin-top:10px;">Comprobar</a>
+                            <a  onclick="done(2)" id="doneBtn" class="btn center" style="margin-top:10px;">Comprobar</a>
                             <a  href="nivel2.html" id="nextBtn" class="btn center" style="margin-top:50px;display:none">Siguiente</a>
                         </div>
                     </div>
 
                     <div class="fixed-action-btn horizontal" style="bottom: 45px; left:20px;">
-                        <a  onclick="menu(true)" id="menuBtn" class="btn orange darken-1">Menu</a>
-                        <a id="a"></a>
+                        <a  onclick="menu(false)" id="menuBtn" class="btn orange darken-1">Menu</a>
                     </div>
                 </div>
                 <div class="col s1">
@@ -106,6 +113,4 @@
                 </div>
             </div>
         </div>
-
-    </body>
-</html>
+</body>

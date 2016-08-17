@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <title>Tutorial</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+        <!-- see http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <style>
+            /* following two viewport lines are equivalent to the meta viewport statement above, needed for Windows */
+            /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
+            @-ms-viewport { width: 100vw ; zoom: 100% ; }  @viewport { width: 100vw ; zoom: 100% ; }
+            @-ms-viewport { user-zoom: fixed ; }           @viewport { user-zoom: fixed ; }
+        </style>
+
+        <link rel="stylesheet" type="text/css" href="css/app.css">
+        <script src="cordova.js"></script>          <!-- phantom library, needed for Cordova api calls, added during build -->
+        <script src="js/app.js"></script>           <!-- recommended location of your JavaScript code relative to other JS files -->
+        <script src="xdk/init-dev.js"></script>     <!-- normalizes device and document ready events, see README for details -->
+        <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+        <script src="js/materialize.min.js"></script>
+        <script src="js/jquery-1.12.4.min.js"></script>
+  </head>
+  <body>
+    <div class="row center">
+      <div class="col s12">
+        <h1>TUTORIAL</h1>
+      </div>
+      <p>Las Expresiones regulares son sentencias formadas por un conjunto de simbolos, números y letras como por ejemplo:</p>
+[ABC123]*<br>
+          <p>Esta expresión regular aplica a uno o mas (señalizado por el *) caracteres que se encuentran entre corchetes ([ABC123]).
+      </p><br>
+        <p>En el juego veremos expresiones regulares en la parte de arriba y al costado de cuadros de texto donde nosotros tendremos
+        que poner caracteres que entren dentro de las 2 expresiones regulares que se aplican tanto en la sentencia alineada verticalmente
+        con el recuadro como tanto con la que esta alineada horizontalmente con el recuadro. Aqui podras ver todas los caracteres
+             que puede tener una expresión regular y su significado.</p>
+      </div>
+      <p><b>n!</b> Todo lo que no sea n</p>
+      <p><b>n*</b> n puede estar cero o ilimitadas veces</p>
+      <p><b>n+</b> n puede estar una o ilimitadas veces</p>
+      <p><b>n?</b> n puede estar cero o una vez</p>
+      <p><b>n{x}</b> n debe estar x veces</p>
+      <p><b>n{x,}</b> n debe estar x veces o más</p>
+      <p><b>n{2,4}</b> n puede estar 2,3 o 4 veces</p>
+      <p><b>.</b> (punto) Puede ser cualquier caracter</p>
+      <p><b>(A|B)</b> A o B</p>
+      <p><b>(...)</b> Grupo de caracteres</p>
+      <p><b>[ABC]</b> A, B o C</p>
+      <p><b>[^ABC]</b> Caracter diferente a A, B y C</p>
+      <p><b>[0-9]</b> Numero entre el 0 y el 9</p>
+      <p><b>[A-Z0-9]</b> Caracter entre A y Z o entre 0 y 9</p>
+      <p><b>\n</b> Exactamente el grupo de caracteres n</p>
+      <p><b>\w</b> Cualquier letra</p>
+      <p><b>\W</b> Cualquier caracter que NO sea una letra</p>
+      <p><b>\d</b> Digito numérico (0-9)</p>
+      <p><b>\D</b> Cualquier caracter que NO sea un número</p>
+      <p><b>\s</b> Espacio en blanco ( )</p>
+      <p><b>\S</b> Caracter que NO sea un espacio en blanco</p>
+    <div class = "row center">
+        <div class="col s12">
+            <a  onclick="menu(false)" id="menuBtn" class="btn orange darken-1">Menu</a>
+        </div>
+    </div>
+    
+
+  </body>
+</html>

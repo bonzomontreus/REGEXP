@@ -22,16 +22,23 @@
 // el = document.getElementById("id_myButton") ;
 // el.addEventListener("click", myEventHandler, false) ;
 function start(){
-    document.getElementById("viewMenu").style.display = "none";
-    document.getElementById("viewGame").style.display = "";
+    $("#viewMenu").slideUp();
+    $("#viewGame").slideDown();
 }
 
-function menu(){
-    document.getElementById("viewGame").style.display = "none";
-    document.getElementById("viewMenu").style.display = "";
+function menu(a){
+    if (a){
+        $("#viewGame").slideUp();
+        $("#viewMenu").slideDown();
+        $("nextBtn").hide();
+    }else{
+        window.location.replace("index.html");
+    }
 }
 
-function done(){
+
+
+function done(lvl){
     var reV = [];
     var reH = [];
     var inH = [];
@@ -88,9 +95,18 @@ function done(){
     }
     if (correct == (reV.length+reH.length)){
         document.getElementById("doneBtn").style.backgroundColor = "green";
+        setTimeout(function(){ $("#doneBtn").html('SIGUIENTE EN 3'); }, 0000);
+        setTimeout(function(){ $("#doneBtn").html('SIGUIENTE EN 2'); }, 1000);
+        setTimeout(function(){ $("#doneBtn").html('SIGUIENTE EN 1'); }, 2000);
+        setTimeout(function(){ nextLvl(lvl);
+ }, 3000);
     }else{
         document.getElementById("doneBtn").style.backgroundColor = "red";
     }
+}
+
+function nextLvl(lvl){
+    window.location.replace("nivel" + String(lvl + 1) + ".html");
 }
 
 // The function below is an example of the best way to "start" your app.
