@@ -45,17 +45,17 @@ function done(lvl){
     var inV = [];
     var correct = 0;
     var reVcount = document.getElementsByName("reV").length;
-    for (var i=0;i<reVcount;i++){
+    for (var i=0; i<reVcount; i++){
         var id = document.getElementsByName("reV")[i].getAttribute("id");
         reV[i] = document.getElementById(id).innerHTML;
     }
     var reHcount = document.getElementsByName("reH").length;
-    for (i=0;i<reHcount;i++){
+    for (i=0; i<reHcount; i++){
         id = document.getElementsByName("reH")[i].getAttribute("id");
         reH[i] = document.getElementById(id).innerHTML;
     }
     var idMkrH = 0;
-    for (i=0;i<reH.length;i++){
+    for (i=0; i<reH.length; i++){
         for (var j=0;j<reV.length;j++){
             if(j==0){
                 inH[i] = document.getElementById("input"+idMkrH).value.toUpperCase();
@@ -66,9 +66,9 @@ function done(lvl){
         }
     }
     var idMkrV = 0;
-    for (var o=0;o<reV.length;o++){
+    for (var o=0; o<reV.length; o++){
         idMkrV = o;
-        for (var p=0;p<reH.length;p++){
+        for (var p=0; p<reH.length; p++){
             if(p==0){
                 inV[o] = document.getElementById("input"+idMkrV).value.toUpperCase();
             }else{
@@ -77,7 +77,7 @@ function done(lvl){
             }
         } 
     }
-    for (i=0;i<reH.length;i++){
+    for (i=0; i<reH.length; i++){
         var regexp = new RegExp(reH[i],"m");
         if (inH[i].match(regexp) == inH[i]){
             correct++;
@@ -85,7 +85,7 @@ function done(lvl){
             break;
         }
     }
-    for (i=0;i<reV.length;i++){
+    for (i=0; i<reV.length; i++){
         regexp = new RegExp(reV[i],"m");
         if(inV[i].match(regexp) == inV[i]){
             correct++;
@@ -106,7 +106,12 @@ function done(lvl){
 }
 
 function nextLvl(lvl){
-    window.location.replace("nivel" + String(lvl + 1) + ".html");
+    if("nivel" + String(lvl + 1) + ".html" == "nivel3.html"){
+        window.location.replace("index.html");
+        
+    }else{
+        window.location.replace("nivel" + String(lvl + 1) + ".html");
+    }
 }
 
 // The function below is an example of the best way to "start" your app.

@@ -5,7 +5,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-project-lite/sample.zip",
       "projectGuid": "ff99e0f4-a05f-4844-8b64-af8aea084938",
-      "lastModifiedDate": 1471382334453,
+      "lastModifiedDate": 1471526247884,
       "creationDate": 1463519290410
     },
     "XDK-app-designer": "false",
@@ -24,7 +24,7 @@
       "www/bower_components/emmetjs": {
         "settings": {
           "project": {
-            "XDK-not-deployed": "true"
+            "XDK-not-deployed": "false"
           }
         }
       }
